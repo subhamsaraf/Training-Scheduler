@@ -13,10 +13,15 @@ namespace TrainingPlan
         {
             IInput scanner = new ConsoleInput();
             int id = 1;
-            IDataStore dataStore = new InMemoryDataStore(); 
+            
+            IDataStore dataStore = new InMemoryDataStore();
+            IReport consoleBasedReporting = new ConsoleBasedReporting()
+            {
+                DataStore = dataStore
+            };
             while (true)
             {
-                Console.WriteLine("Enter\n(1)Add Trainer\n(2)Add Trainee\n(3)Add Topic\n(4)View Trainers");
+                Console.WriteLine("Enter\n(1)Add Trainer\n(2)Add Trainee\n(3)Add Topic\n(4)View Trainers\n(5)View Trainees\n(6)View Topics");
                 int choice;
                 if (Int32.TryParse(Console.ReadLine(), out choice))
                 {
@@ -35,10 +40,14 @@ namespace TrainingPlan
                             dataStore.AddTopic(newTopic);
                             break;
                         case 4:
-                            IReport report = new Report();
-                            report.DataStore = dataStore;
-                            List<Trainer> listOfTrainers = report.GetTrainers();
+                            consoleBasedReporting.GetTrainers();
                             break;
+                        case 5:
+                            consoleBasedReporting.GetTrainees();
+                            break;
+                        case 6:
+                            consoleBasedReporting.GetTopics();
+                            break;            
                         default:
                             break;
                     }
