@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TrainingPlan.BusinessModel
 {
@@ -48,6 +49,11 @@ namespace TrainingPlan.BusinessModel
         public List<Trainer> GetTrainers()
         {
             return listOfTrainers;
+        }
+
+        public void ScheduleTopic(TopicSchedule topicSchedule)
+        {
+            
         }
     }
 }

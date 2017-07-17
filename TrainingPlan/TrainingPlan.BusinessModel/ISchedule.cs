@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrainingPlan.BusinessModel
 {
-    public class TopicSchedule
+    public interface ISchedule
     {
-        public DateTime Time { get; set; }
-        public int TopicId { get; set; }
-        public int TrainerId { get; set; }
+        void AddTopic(TopicSchedule topicSchedule);
     }
 }

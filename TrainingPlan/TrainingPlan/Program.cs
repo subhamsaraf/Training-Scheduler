@@ -12,8 +12,6 @@ namespace TrainingPlan
         static void Main(string[] args)
         {
             IInput scanner = new ConsoleInput();
-            int id = 1;
-            
             IDataStore dataStore = new InMemoryDataStore();
             IReport consoleBasedReporting = new ConsoleBasedReporting()
             {
@@ -21,7 +19,7 @@ namespace TrainingPlan
             };
             while (true)
             {
-                Console.WriteLine("Enter\n(1)Add Trainer\n(2)Add Trainee\n(3)Add Topic\n(4)View Trainers\n(5)View Trainees\n(6)View Topics");
+                Console.WriteLine("Enter\n(1)Add Trainer\n(2)Add Trainee\n(3)Add Topic\n(4)View Trainers\n(5)View Trainees\n(6)View Topics\n(7)Schedule");
                 int choice;
                 if (Int32.TryParse(Console.ReadLine(), out choice))
                 {
@@ -47,6 +45,9 @@ namespace TrainingPlan
                             break;
                         case 6:
                             consoleBasedReporting.GetTopics();
+                            break;
+                        case 7:
+
                             break;            
                         default:
                             break;

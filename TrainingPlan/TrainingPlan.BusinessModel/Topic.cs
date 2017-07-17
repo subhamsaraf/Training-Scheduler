@@ -9,6 +9,7 @@ namespace TrainingPlan.BusinessModel
     public class Topic
     {
         public string Name { get; set; }
+        public int Id { get; set; }
 
         public override string ToString()
         {

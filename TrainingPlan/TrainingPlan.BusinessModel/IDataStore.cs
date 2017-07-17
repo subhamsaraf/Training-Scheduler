@@ -14,5 +14,6 @@ namespace TrainingPlan.BusinessModel
         List<Trainer> GetTrainers();
         List<Trainee> GetTrainees();
         List<Topic> GetTopics();
+        void ScheduleTopic(TopicSchedule topicSchedule);
     }
 }
